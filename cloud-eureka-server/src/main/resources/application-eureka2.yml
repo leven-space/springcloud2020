@@ -9,4 +9,6 @@ eureka:
     fetch-registry: false # 是否获取服务提供列表
     service-url:
       defaultZone: http://eureka1.com:7001/eureka/
+  server:
+    enable-self-preservation: false # 关闭自我保护机制，启动绝情模式
 

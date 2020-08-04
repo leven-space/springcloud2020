@@ -1,5 +1,5 @@
 server:
-  port: 9001
+  port: 9002
 
 spring:
   application:
@@ -9,3 +9,6 @@ eureka:
   client:
     service-url:
       defaultZone: http://eureka1.com:7001/eureka/,http://eureka2.com:7002/eureka/
+  instance:
+    prefer-ip-address: true # 使用ip地址展示
+    instance-id: cloud-provider-payment-9002 # 实例名称

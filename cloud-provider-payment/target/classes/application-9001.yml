@@ -1,0 +1,16 @@
+server:
+  port: 9001
+
+spring:
+  application:
+    name: cloud-provider-payment
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1.com:7001/eureka/,http://eureka2.com:7002/eureka/
+  instance:
+    prefer-ip-address: true # 使用ip地址展示
+    instance-id: cloud-provider-payment-9001 # 实例名称
+    lease-renewal-interval-in-seconds: 2 # eureka 客户端向服务端发送心跳间隔时间，默认是30s
+    lease-expiration-duration-in-seconds: 10 #eureka 服务端等待最长过期时间，如果超过这个时间没有收到，则剔除 默认是90s
