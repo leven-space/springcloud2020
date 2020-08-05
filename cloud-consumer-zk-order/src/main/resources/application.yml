@@ -1,0 +1,9 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: cloud-cosumer-order
+  cloud:
+    zookeeper:
+      connect-string: server.wetech.club:2181

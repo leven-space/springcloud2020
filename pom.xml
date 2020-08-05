@@ -68,9 +68,11 @@
 
     <modules>
         <module>cloud-api-common</module>
-        <module>cloud-cosumer-order</module>
-        <module>cloud-provider-payment</module>
+        <module>cloud-cosumer-eureka-order</module>
+        <module>cloud-provider-eureka-payment</module>
         <module>cloud-eureka-server</module>
+        <module>cloud-provider-zk-payment</module>
+        <module>cloud-consumer-zk-order</module>
     </modules>
 
 
