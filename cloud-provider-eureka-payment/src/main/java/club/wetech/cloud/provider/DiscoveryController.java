@@ -30,9 +30,9 @@ public class DiscoveryController {
         for (String service : services) {
             log.info("***** registered service name={}",service);
         }
-        List<ServiceInstance> instances = discoveryClient.getInstances("cloud-provider-payment");
+        List<ServiceInstance> instances = discoveryClient.getInstances("cloud-club.wetech.cloud.provider.provider-payment");
         for (ServiceInstance instance : instances) {
-            log.info("***** cloud-provider-payment access uri={}",instance.getUri());
+            log.info("***** cloud-club.wetech.cloud.provider.provider-payment access uri={}",instance.getUri());
 
         }
         return discoveryClient.description();

@@ -11,4 +11,4 @@ eureka:
       defaultZone: http://eureka1.com:7001/eureka/,http://eureka2.com:7002/eureka/
   instance:
     prefer-ip-address: true # 使用ip地址展示
-    instance-id: cloud-provider-payment-9002 # 实例名称
+    instance-id: cloud-club.wetech.cloud.provider.provider-payment-9002 # 实例名称
