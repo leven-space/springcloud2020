@@ -1,0 +1,17 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: cloud-cosumer-order
+  cloud:
+    zookeeper:
+      connect-string: server.wetech.club:2181
+
+ribbon:
+  ReadTimeout: 5000
+  ConnectTimeout: 5000
+
+logging:
+  level:
+    cloud.consumer.PaymentServiceFeignClient: debug

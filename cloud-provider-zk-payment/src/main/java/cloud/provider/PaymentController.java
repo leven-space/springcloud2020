@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * @author leven.chen
  */
@@ -29,5 +31,13 @@ public class PaymentController {
         return ResultBuilder.success(msg);
     }
 
+
+    @GetMapping("/slowPayment/{orderId}")
+    public Result<String> doSlowPayment(@PathVariable String orderId) throws InterruptedException {
+        log.info("orderId={} 已支付成功 服务端口={}", orderId, port);
+        TimeUnit.SECONDS.sleep(3);
+        String msg = "orderId=" + orderId + "支付成功，port=" + port;
+        return ResultBuilder.success(msg);
+    }
 
 }
