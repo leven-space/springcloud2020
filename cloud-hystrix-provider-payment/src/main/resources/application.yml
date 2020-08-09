@@ -1,0 +1,12 @@
+server:
+  port: 9001
+  tomcat:
+    max-threads: 10
+    max-connections: 30
+
+spring:
+  application:
+    name: cloud-provider-payment
+  cloud:
+    zookeeper:
+      connect-string: server.wetech.club:2181

@@ -68,14 +68,20 @@
 
     <modules>
         <module>cloud-api-common</module>
-        <module>cloud-cosumer-eureka-order</module>
-        <module>cloud-provider-eureka-payment</module>
+        <module>cloud-eureka-cosumer-order</module>
+        <module>cloud-eureka-provider-payment</module>
         <module>cloud-eureka-server</module>
-        <module>cloud-provider-zk-payment</module>
-        <module>cloud-consumer-zk-order</module>
-        <module>cloud-provider-consul-payment</module>
-        <module>cloud-consumer-consul-order</module>
-        <module>cloud-consumer-feign-order</module>
+
+        <module>cloud-feign-consumer-order</module>
+
+        <module>cloud-consul-provider-payment</module>
+        <module>cloud-consul-consumer-order</module>
+
+        <module>cloud-zk-provider-payment</module>
+        <module>cloud-zk-consumer-order</module>
+
+        <module>cloud-hystrix-provider-payment</module>
+        <module>cloud-hystrix-consumer-order</module>
     </modules>
 
 
