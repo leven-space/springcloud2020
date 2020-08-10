@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.PathVariable;
  * @author leven.chen
  */
 @Component
-@FeignClient("cloud-provider-payment")
+@FeignClient(value = "cloud-provider-payment", fallback = PaymentFeignClientFallbackImpl.class)
 public interface PaymentFeignClient {
 
     @GetMapping("/api/payment/doPayment/{orderId}")
     Result<String> doPayment(@PathVariable("orderId") String orderId);
 
     @GetMapping("/api/payment/slowPayment/{orderId}")
-    Result<String> doSlowPayment(@PathVariable("orderId") String orderId) throws InterruptedException;
+    Result<String> doSlowPayment(@PathVariable("orderId") String orderId);
 
 
     @GetMapping("/api/payment/errorPayment/{orderId}")

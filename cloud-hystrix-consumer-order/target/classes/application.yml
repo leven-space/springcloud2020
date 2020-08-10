@@ -8,6 +8,7 @@ spring:
     zookeeper:
       connect-string: server.wetech.club:2181
 
-ribbon:
-  ReadTimeout: 5000
-  ConnectTimeout: 5000
+#开启feign 对hystrix的支持
+feign:
+  hystrix:
+    enabled: true

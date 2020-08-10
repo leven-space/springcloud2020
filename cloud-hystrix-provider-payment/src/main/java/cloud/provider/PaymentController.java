@@ -33,8 +33,8 @@ public class PaymentController {
         return ResultBuilder.success(msg);
     }
 
-    @HystrixCommand(fallbackMethod = "fallbackMethod",commandProperties = {
-            @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds",value = "3000")
+    @HystrixCommand(fallbackMethod = "fallbackMethod", commandProperties = {
+            @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "5000")
     })
     @GetMapping("/slowPayment/{orderId}")
     public Result<String> doSlowPayment(@PathVariable String orderId) throws InterruptedException {
@@ -47,11 +47,13 @@ public class PaymentController {
     @HystrixCommand(fallbackMethod = "fallbackMethod")
     @GetMapping("/errorPayment/{orderId}")
     public Result<String> doErrorPayment(@PathVariable String orderId) {
-        throw new RuntimeException("支付遇到错误 orderId=" + orderId);
+        int a = 3 / 0;
+        String msg = "orderId=" + orderId + "支付成功，port=" + port;
+        return ResultBuilder.success(msg);
     }
 
     public Result<String> fallbackMethod(String orderId) {
-        return ResultBuilder.success("orderId="+orderId+"付款错误，请稍后再试");
+        return ResultBuilder.success("orderId=" + orderId + "付款错误，请稍后再试");
     }
 
 }
