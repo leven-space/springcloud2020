@@ -82,6 +82,7 @@
 
         <module>cloud-hystrix-provider-payment</module>
         <module>cloud-hystrix-consumer-order</module>
+        <module>cloud-gateway-server</module>
     </modules>
 
 

@@ -1,0 +1,17 @@
+server:
+  port: 9527
+
+spring:
+  application:
+    name: cloud-gateway-server
+  cloud:
+    zookeeper:
+      connect-string: server.wetech.club:2181
+    gateway:
+      routes:
+        - id: normal-pay
+          uri: http://localhost:9001/
+          predicates:
+            - Path=/api/payment/doPayment/**
+            - After=2020-08-17T21:00:21.269+08:00[Asia/Shanghai]
+

@@ -7,3 +7,7 @@ spring:
   cloud:
     zookeeper:
       connect-string: server.wetech.club:2181
+
+ribbon:
+  ReadTimeout: 5000
+  ConnectTimeout: 5000

@@ -6,6 +6,7 @@ import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.netflix.ribbon.RibbonClient;
 import org.springframework.cloud.netflix.ribbon.RibbonClients;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
@@ -17,6 +18,7 @@ import ribbonrules.PaymentRibbonRuleConfig;
 @SpringBootApplication
 @Configuration
 @RibbonClients(value = {@RibbonClient(name = "cloud-provider-payment", configuration = PaymentRibbonRuleConfig.class)})
+@EnableFeignClients
 public class CloudConsumerZkOrderApplication {
 
     public static void main(String[] args) {

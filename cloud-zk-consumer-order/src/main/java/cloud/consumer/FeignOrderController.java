@@ -1,5 +1,6 @@
 package cloud.consumer;
 
+import cloud.consumer.feignclient.PaymentFeignClient;
 import club.wetech.cloud.common.dto.Result;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,20 +15,18 @@ import org.springframework.web.client.RestTemplate;
  * @author leven.chen
  */
 @RestController
-@RequestMapping("/api/consumer/order")
-public class OrderController {
+@RequestMapping("/api/consumer/feign/order")
+public class FeignOrderController {
 
-    private static final Logger log = LoggerFactory.getLogger(OrderController.class);
+    private static final Logger log = LoggerFactory.getLogger(FeignOrderController.class);
 
     @Autowired
-    private RestTemplate restTemplate;
+    private PaymentFeignClient restTemplate;
 
     @GetMapping("/pay/{orderId}")
     public Result<String> orderPay(@PathVariable String orderId) {
         log.info("zookeeper 订单ID={} 校验合法性", orderId);
-        log.info("zookeeper 订单ID={} 执行付款", orderId);
-        String url = "http://cloud-provider-payment/api/payment/doPayment/{orderId}";
-        Result<String> result = restTemplate.getForObject(url, Result.class, orderId);
+        Result<String> result = restTemplate.doSlowPayment(orderId);
         return result;
     }
 }
