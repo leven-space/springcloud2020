@@ -83,6 +83,8 @@
         <module>cloud-hystrix-provider-payment</module>
         <module>cloud-hystrix-consumer-order</module>
         <module>cloud-gateway-server</module>
+        <module>cloud-config-server</module>
+        <module>cloud-config-client</module>
     </modules>
 
 

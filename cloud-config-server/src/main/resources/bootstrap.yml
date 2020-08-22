@@ -1,0 +1,18 @@
+server:
+  port: 3344
+
+spring:
+  application:
+    name: cloud-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/leven_space/springcloud-config-repo.git
+          username: 18604837507
+          password: Thinkpads5@gitee
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1.com:7001/eureka/,http://eureka2.com:7002/eureka/
