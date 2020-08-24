@@ -85,6 +85,8 @@
         <module>cloud-gateway-server</module>
         <module>cloud-config-server</module>
         <module>cloud-config-client</module>
+        <module>cloud-alibaba-nacos-provider-payment</module>
+        <module>cloud-alibaba-nacos-consumer-order</module>
     </modules>
 
 
